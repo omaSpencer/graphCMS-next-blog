@@ -19,7 +19,7 @@ const Header = () => {
 					</Link>
 				</div>
 				<div className="hidden md:float-left md:contents">
-					{categories.reverse().map(({ slug, name }) => (
+					{categories.map(({ slug, name }) => (
 						<Link href={`/category/${slug}`} key={slug}>
 							<span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">
 								{name}
