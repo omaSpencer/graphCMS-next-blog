@@ -4,12 +4,13 @@ import { getPosts, getPostDetails } from '../../services';
 import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader } from '../../components';
 
 const PostDetails = ({ post }) => {
-	const { slug, author, categories } = post;
 	const router = useRouter();
 
-	if (router.isFallback) {
+	if (router.isFallback || !post) {
 		return <Loader />;
 	}
+
+	const { slug, author, categories } = post;
 
 	return (
 		<article className="container mx-auto px-10 mb-8">
